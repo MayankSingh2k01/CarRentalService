@@ -1,11 +1,11 @@
 <% layout('layouts/boilerplate')%>
     <link rel="stylesheet" href="/stylesheets/stars.css">
 
-
     <div class="row">
 
         <div class="col-6">
-
+            <!-- Map -->
+            <div id='map'></div>
             <!-- Main card Image -->
             <div id="campgroundCarousel" class="carousel slide" data-bs-ride="carousel">
                 <div class="carousel-inner">
@@ -36,12 +36,6 @@
                         <%= campground.title%>
                     </h5>
                     <p class="card-text">
-                        <i> Owner</i> : <%= campground.owner%>
-                    </p>
-                    <p class="card-text">
-                        <i> Contact No. </i>: <%= campground.contact%>
-                    </p>
-                    <p class="card-text">
                         <%= campground.description%>
                     </p>
                 </div>
@@ -68,13 +62,8 @@
                         </div>
             </div>
         </div>
-
+        <!-- Reviews -->
         <div class="col-6">
-            <!-- Map -->
-            <div id='map' class="mb-3"></div>
-
-            <!-- Reviews -->
-
             <% if(currentUser){ %>
                 <form action="/campgrounds/<%=campground._id%>/reviews" method="POST" class="mb-3 validated-form"
                     novalidate>
@@ -111,8 +100,6 @@
                 </form>
                 <% } %>
 
-                    <h2>Reviews </h2><br>
-
                     <% for(let review of campground.reviews){ %>
                         <div class="card">
                             <div class="card-body">
@@ -142,6 +129,6 @@
         const mapToken = "<%=process.env.MAPBOX_TOKEN%>";
         //save it without formating because formatting will mess up the syntax of ejs
 
-        const campground = <%- JSON.stringify(campground) %>
+        const campground = <% - JSON.stringify(campground) %>
     </script>
     <script src="/javascripts/showPageMap.js"></script>

@@ -13,6 +13,22 @@
                         Looks good!
                     </div>
                 </div>
+                <div class="mb-3">
+                    <label class="form-label" for="owner">Owner Name</label>
+                    <input class="form-control" type="text" id="owner" name="campground[owner]"
+                        value="<%= campground.owner %>" required>
+                    <div class=" valid-feedback">
+                        Looks good!
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label" for="contact">Contact Number</label>
+                    <input class="form-control" type="text" id="contact" name="campground[contact]"
+                        value="<%= campground.contact %>" required>
+                    <div class=" valid-feedback">
+                        Looks good!
+                    </div>
+                </div>
 
                 <div class="mb-3">
                     <label class="form-label" for="location">Location</label>
@@ -42,7 +58,7 @@
                 </div>
 
                 <div class="mb-3">
-                    <label class="form-label" for="description">Contact Details</label>
+                    <label class="form-label" for="description">Description</label>
                     <textarea class="form-control" type="text" id="description" name="campground[description]"
                         required><%= campground.description %></textarea>
                     <div class="valid-feedback">
